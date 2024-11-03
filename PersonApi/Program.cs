@@ -4,6 +4,7 @@ using Microsoft.OpenApi.Models;
 using MovieApi.Services;
 using PersonApi.Repositories;
 using PersonApi.Repositories.Interfaces;
+using PersonApi.Services;
 using PersonApi.Services.Interfaces;
 using System.Text;
 
@@ -19,6 +20,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddSingleton<IPersonRepository, PersonRepository>();
 builder.Services.AddSingleton<IPersonService, PersonService>(); 
 builder.Services.AddSingleton<IAuthenticationService, AuthenticationService>();
+builder.Services.AddSingleton<PersonFacade>();
 
 
 builder.Services.AddAuthentication(options =>

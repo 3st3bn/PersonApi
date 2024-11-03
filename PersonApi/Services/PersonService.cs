@@ -13,9 +13,9 @@ namespace MovieApi.Services
             _personRepository = personRepository;
         }
 
-        public async Task<List<Result>> GetPersons(string url)
+        public async Task<List<Result>> GetPersons(string url, int limit = 10)
         {
-            return await _personRepository.GetPersons(url);
+            return await _personRepository.GetPersons(url, limit);
         }
     }
 }
